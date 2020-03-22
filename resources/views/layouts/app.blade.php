@@ -31,7 +31,8 @@
             <a class="navbar-brand" href="{{ url(Auth::user() !=null ? '/home/': '/login') }}"
                style="font-family: 'Courgette',sans-serif; color: #F8433F; font-size: 30px; font-weight: 500">
                 {{--pega os dados do arquivo de configuracao .env ou usa um default--}}
-                {{ config('app.name', 'Laravel') }}
+                <i class="fas fa-camera-retro"
+                   style="color:  #F8433F;font-size: 26px"></i> {{ config('app.name', 'Laravel') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -58,7 +59,14 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown d-flex align-items-center" >
+
+                            <a id="" class="nav-link"
+                               href="{{ url(Auth::user() !=null ? '/profile/'.Auth::user()->id : '/login') }}">
+                                <img class="rounded-circle " style=" height: 40px;"
+                                     src="/storage/{{Auth::user()->profile->profileImage()}}">
+                            </a>
+
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{--Auth::User() pega dados do usuario logado--}}
