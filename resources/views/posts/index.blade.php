@@ -14,7 +14,9 @@
                     <div class="row">
                         <div class="col-12">
                             <p>
-                            <span class="font-weight-bold">
+                                <img class="rounded-circle " style=" height: 20px;"
+                                     src="/storage/{{$post->user->profile->profileImage()}}">
+                                <span class="font-weight-bold">
                                 <a href="/profile/{{ $post->user->id }}">
                                     <span class="text-dark">{{ $post->user->username }}</span>
                                 </a>
@@ -33,7 +35,7 @@
 
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-{{--                bruxaria do laravel que cria o paginador automaticamente qd o metodo de busca tem um paginador--}}
+                {{--                bruxaria do laravel que cria o paginador automaticamente qd o metodo de busca tem um paginador--}}
                 {{ $posts->links() }}
             </div>
         </div>
